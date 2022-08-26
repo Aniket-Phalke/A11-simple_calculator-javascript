@@ -1,0 +1,166 @@
+     <!DOCTYPE html>
+     <html>
+         <head>
+            <title>calculator by aniket</title>
+            <style>
+     body {
+     	
+     	background-color: #424242;
+     	font-family: Tahoma;
+     }
+     
+     .container {
+     	display: flex;
+     	align-items: center;
+     	justify-content: center;
+     	height: 100vh;
+     	width: 100vw;
+     }
+     
+     #container {
+     	width: 500px;
+     	padding: 8px 8px 20px 8px;
+     	margin: 20px auto;
+     	background-image: url("tech2.jpg") ;
+     	border-radius: 4px;
+     	border: 2px solid #FFF;
+     	  
+     }
+     
+     #display {
+     	display: block;
+     	margin: 15px auto;
+     	height: 42px;
+     	width: 450px;
+     	padding: 0 10px;
+     	border-radius: 4px;
+     	border: 2px solid black;
+     	background-color: #FFF;
+     	font-size: 28px;
+     	color: #666;
+     	text-align: right;
+     	font-weight: 400;
+     }
+     
+     .button {
+     	display: inline-block;
+     	margin: 2px;
+     	width: 42px;
+     	height: 42px;
+     	font-size: 16px;
+     	font-weight: bold;
+     	border-radius: 4px;
+     }
+     
+     .mathButtons {
+     	margin: 2px 2px 6px 2px;
+     	color: #FFF;
+     	background-color: #434343;
+     	border: 1px solid #434343;
+         width: 45px;
+         height: 40px;
+         font-size: 15px;
+         
+     }
+     
+     .digits {
+     	color: #181818;
+     	background-color: gray;
+     	border: 1px solid gray;  
+     }
+     
+     .digits:hover
+     {
+     	background-color: #008080;
+         color: white;
+         font-size: 17px;
+     }
+	 .mathButtons:hover,#clearButton:hover{
+		background-color:#008070;
+		color:black;
+	 }
+     
+     #clearButton {
+     	color: #FFF;
+     	background-color: #D20000;
+     	border: 0px solid #008070;
+     }
+     
+     .float-child{
+         float:left;
+         
+     }
+     #calimg{
+         margin-top: 0px;
+     }
+     .buttondigits,.mathButtons{
+         margin-top: 20px;
+     }
+     .slowgun{
+         margin-top: 40px;
+       }
+            </style>
+     	   <script>
+     		function cleartext(){
+                document.getElementById("display").value=""
+     		}
+             function concat(num){
+                document.getElementById("display").value+=num
+     		} 
+     		function calculate(){
+     			let x=document.getElementById("display").value
+     			let y=eval(x)
+     			document.getElementById("display").value=y
+     		}
+     		
+     	   </script>
+          </head>
+             <body>
+                 <div class="container">
+                     <fieldset id="container">
+                         <form name="calculator">
+                         <input id="display" type="text" name="display" read only>
+                         <div class="float-container">
+                         <div class="float-child">
+                             <img id="calimg"src="calculatorgif.gif"height="300px" width="200px">
+                         </div>
+                          <div class="float-child">
+                        
+                         <input class="button digits" type="button" value="7" onclick="concat('7')">
+                         <input class="button digits" type="button" value="8" onclick="concat('8')">
+                         <input class="button digits" type="button" value="9" onclick="concat('9')">
+
+                        <input class="mathButtons"title="plus" type="button" value="+" onclick="concat('+')">
+                        <br>
+
+                        <input class="button digits" type="button" value="4" onclick="concat('4')">
+                        <input class="button digits" type="button" value="5" onclick="concat('5')">
+                        <input class="button digits" type="button" value="6" onclick="concat('6')">
+
+                        <input class="mathButtons"title="minus" type="button" value="-" onclick="concat('-')">
+                        <br>
+
+                        <input class="button digits" type="button" value="1" onclick="concat('1')">
+                        <input class="button digits" type="button" value="2" onclick="concat('2')">
+                        <input class="button digits" type="button" value="3" onclick="concat('3')">
+
+                        <input class="mathButtons"title="multiply" type="button" value="x" onclick="concat('*')">
+                        <br>
+
+                        <input id="clearButton"class="button"title="clear" type="button" value="C" onclick="cleartext()">
+                        <input class="button digits" type="button" value="0" onclick="concat('0')">
+                        <input class="mathButtons"title="result" type="button" value="=" onclick="calculate()">
+
+                        <input class="mathButtons"title="divide" type="button" value="/" onclick="concat('/')">        
+                        <div class="slowgun"><h3>The fastest way to calculate.</h3></div>              
+                    
+                    </div>
+                    
+                </div>
+
+                    </form>
+                </fieldset>
+            </div>
+        </body>
+    
+</html>
